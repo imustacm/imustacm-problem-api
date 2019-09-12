@@ -1,10 +1,15 @@
 package cn.imustacm.problem.model;
 
+import cn.imustacm.common.utils.LocalDateTimeJsonDeserializer;
+import cn.imustacm.common.utils.LocalDateTimeJsonSerializable;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
@@ -16,8 +21,10 @@ import lombok.experimental.Accessors;
  * @since 2019-09-10
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("problem")
 public class Problem extends Model<Problem> {
 
     private static final long serialVersionUID = 1L;
@@ -56,8 +63,12 @@ public class Problem extends Model<Problem> {
 
     private Integer acceptedNumber;
 
+    @JsonSerialize(using = LocalDateTimeJsonSerializable.class)
+    @JsonDeserialize(using = LocalDateTimeJsonDeserializer.class)
     private LocalDateTime createTime;
 
+    @JsonSerialize(using = LocalDateTimeJsonSerializable.class)
+    @JsonDeserialize(using = LocalDateTimeJsonDeserializer.class)
     private LocalDateTime lastUpdateTime;
 
     private Integer createUser;
