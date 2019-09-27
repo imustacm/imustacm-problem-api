@@ -57,7 +57,7 @@ public class Problem extends Model<Problem> {
 
     private String source;
 
-    private Boolean spjFlag;
+    private Integer problem_type;
 
     private Integer submitNumber;
 
