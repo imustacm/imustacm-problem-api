@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * 绑定ProblemListDTO
  *
@@ -18,9 +20,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProblemListDTO {
 
-    /**
-     * id
-     */
     private Integer id;
 
     private String title;
@@ -29,12 +28,14 @@ public class ProblemListDTO {
 
     private String source;
 
-    private Boolean spjFlag;
+    private Integer problemType;
 
     private Integer submitNumber;
 
     private Integer acceptedNumber;
 
     private String acceptedPercent;
+
+    private List<ProblemToTagDTO> tags;
 
 }
