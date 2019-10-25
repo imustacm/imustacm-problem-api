@@ -57,7 +57,7 @@ public class Problem extends Model<Problem> {
 
     private String source;
 
-    private Integer problem_type;
+    private Integer problemType; //1 正常 2 spj 4 函数实现类
 
     private Integer submitNumber;
 

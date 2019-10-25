@@ -1,8 +1,15 @@
 package cn.imustacm.problem.model;
 
+import cn.imustacm.common.utils.LocalDateTimeJsonDeserializer;
+import cn.imustacm.common.utils.LocalDateTimeJsonSerializable;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -30,6 +37,8 @@ public class Submission extends Model<Submission> {
 
     private Integer userId;
 
+    @JsonSerialize(using = LocalDateTimeJsonSerializable.class)
+    @JsonDeserialize(using = LocalDateTimeJsonDeserializer.class)
     private LocalDateTime createTime;
 
     private String code;
@@ -46,6 +55,13 @@ public class Submission extends Model<Submission> {
 
     private String ip;
 
+    private Integer judgeServer;
+
+    @JsonSerialize(using = LocalDateTimeJsonSerializable.class)
+    @JsonDeserialize(using = LocalDateTimeJsonDeserializer.class)
+    private LocalDateTime judgeTime;
+
+    private Integer passRate;
 
     @Override
     protected Serializable pkVal() {
