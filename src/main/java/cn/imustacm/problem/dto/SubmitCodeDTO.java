@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * 绑定ProblemListDTO
+ * 绑定SubmitCodeDTO
  *
  * @author wangjianli
  * Date: 2019/09/24

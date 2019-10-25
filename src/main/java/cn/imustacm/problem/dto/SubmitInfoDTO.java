@@ -1,27 +1,28 @@
 package cn.imustacm.problem.dto;
 
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 绑定ProblemToTagDTO
+ * 绑定SubmitInfoDTO
  *
  * @author wangjianli
- * Date: 2019/09/24
+ * Date: 2019/10/24
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProblemToTagDTO {
+public class SubmitInfoDTO {
 
-    private Integer problemId;
+    private String judge_id;
 
-    private Integer problemTagId;
+    private String err;
 
-    private String name;
+    private JSONObject judge_result;
 
 }
