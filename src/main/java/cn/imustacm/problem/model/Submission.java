@@ -59,6 +59,12 @@ public class Submission extends Model<Submission> {
 
     private Integer passRate;
 
+    private Long cpuTime;
+
+    private Long realTime;
+
+    private Long memory;
+
     @Override
     protected Serializable pkVal() {
         return this.id;
